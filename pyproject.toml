@@ -134,3 +134,6 @@ ignore = [
 
 [tool.ruff.format]
 preview = true
+
+[tool.poetry.dependencies]
+tiktoken = "^0.6"
