@@ -1,3 +1,29 @@
+# DSCubed AI Winter: Enhanced LLMgine Engine
+
+> **Lean, tool‑augmented chat engine for LLMgine—features automatic short‑term memory summarisation, plug‑and‑play tool calls, and a CLI for rapid prototyping of production‑grade AI assistants.**
+
+## 🌟 New in This Fork
+
+### ✨ What’s New
+
+- **Automatic Short‑Term Memory Summarisation**
+  - Keeps conversations under `MAX_CONTEXT_TOKENS` by condensing the oldest `PRUNE_TARGET_TOKENS` into a single assistant “summary” message.
+  - Triggered transparently before each LLM call—no user action required.
+
+- **Token‑Aware Slice Selection**
+  - Uses a lightweight `tiktoken`‑based helper (`llmgine.utils.token_count`) to measure *tokens*, not characters, ensuring accurate context budgeting.
+
+- **`MemorySummarisedEvent`**
+  - Emits `removed_tokens` → `summary_tokens` metrics to the message‑bus.
+  - Optional CLI hook lets users see when condensation occurs.
+
+- **Plug‑and‑Play Configuration**
+  - Global constants in `llmgine.settings` (`MAX_CONTEXT_TOKENS`, `PRUNE_TARGET_TOKENS`) let you tweak limits without touching engine code.
+
+- **Zero‑Downtime Integration**
+  - Drops into `ToolChatEngine` with two helper methods and one `_maybe_summarise_history()` coroutine.
+  - Works alongside the existing tool‑execution loop; no API changes for end‑users.
+
 # 🌌 **LLMgine**
 
 LLMgine is a _pattern-driven_ framework for building **production-grade, tool-augmented LLM applications** in Python.  
