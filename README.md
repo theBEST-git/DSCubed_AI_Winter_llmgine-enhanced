@@ -2,6 +2,11 @@
 
 > **Lean, tool‑augmented chat engine for LLMgine—features automatic short‑term memory summarisation, plug‑and‑play tool calls, and a CLI for rapid prototyping of production‑grade AI assistants.**
 
+## 🧠 Credits
+
+This project is an **enhanced fork** of [**nathan‑luo/llmgine**](https://github.com/nathan-luo/llmgine).  
+Big thanks to Nathan Luo and the original contributors for the core architecture, message‑bus design, and CLI tooling.
+
 ## 🌟 New in This Fork
 
 ### ✨ What’s New
